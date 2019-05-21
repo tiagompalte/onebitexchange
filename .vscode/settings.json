@@ -1,0 +1,6 @@
+{
+  "ruby.lint": {
+    "ruby": true
+  },
+  "ruby.codeCompletion": "rcodetools"
+}
