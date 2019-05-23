@@ -1,24 +1,13 @@
-# README
+# OneBitExchange - Conversor de Moedas
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Primeiro APP desenvolvido no Bootcamp da [OneBitCode](https://onebitcode.com/)
 
-Things you may want to cover:
+Para ver <em>funfando</em> acesse o [link](http://onebitexchange-palte.herokuapp.com/)
 
-* Ruby version
+## O que se viu...
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* RoR
+* TDD com RSpec
+* Coffescript
+* Continuos Integration com [CodeShip](http://codeship.com/)
+* Deploy no [Heroku](https://www.heroku.com/)
