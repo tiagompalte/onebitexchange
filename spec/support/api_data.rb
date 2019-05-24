@@ -1,6 +1,6 @@
 RSpec.configure do |config|
   config.before(:each) do
-    stub_request(:get, /currencydatafeed.com/ )
+    stub_request(:get, /currencydatafeed.com/)
     .with(headers: {
       'Accept'=>'*/*'
     }).to_return(status: 200, body: '
@@ -15,5 +15,23 @@ RSpec.configure do |config|
             }
         ]
       }', headers: {})
+  end
+  config.before(:each) do
+    stub_request(:get, /cryptonator.com/)
+        .with(headers: {
+            'Accept'=>'*/*'
+        }).to_return(status: 200, body: '
+        {
+          "ticker":{
+            "base":"BTC",
+            "target":"BRL",
+            "price":"32530.00001000",
+            "volume":"365.69666700",
+            "change":"-159.99992000"
+          },
+          "timestamp":1558721583,
+          "success":true,
+          "error":""
+        }', headers: {})
   end
 end

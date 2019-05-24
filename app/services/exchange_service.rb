@@ -16,10 +16,30 @@ class ExchangeService
       url = "#{exchange_api_url}?token=#{exchange_api_key}&currency=#{@source_currency}/#{@target_currency}"
       res = RestClient.get url
       value = JSON.parse(res.body)['currency'][0]['value'].to_f
-      
+
       value * @amount
     rescue RestClient::ExceptionWithResponse => e
       e.response
     end
   end
+
+  def exchange_bitcoin
+    begin
+      exchange_bitcoin_api_url = Rails.application.credentials[Rails.env.to_sym][:bitcoin_api_url]
+      url = "#{exchange_bitcoin_api_url}#{@source_currency}-#{@target_currency}"
+      res = RestClient.get url
+      success = JSON.parse(res.body)['success']
+
+      raise JSON.parse(res.body)['error'] unless success
+
+      value = JSON.parse(res.body)['ticker']['price'].to_f
+
+      value * @amount
+    rescue RestClient::ExceptionWithResponse => e
+      e.response
+    rescue StandardError => e
+      e.message
+    end
+  end
+
 end

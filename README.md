@@ -8,6 +8,6 @@ Para ver <em>funfando</em> acesse o [link](http://onebitexchange-palte.herokuapp
 
 * RoR
 * TDD com RSpec
-* Coffescript
+* CoffeeScript
 * Continuos Integration com [CodeShip](http://codeship.com/)
 * Deploy no [Heroku](https://www.heroku.com/)
